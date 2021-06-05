@@ -1,4 +1,4 @@
-![logotipo](static/media/diabetes.jpg)
+![logotipo](./whats_burning.jpg)
 # **SIRCODI** :drop_of_blood: :medical_symbol: :argentina:
  ## *Sistema de Registro y Control para Personas con Diabetes.* 
  Este es un Proyecto del tipo Web-App o API Realizado para el Curso de "Programador Python".
