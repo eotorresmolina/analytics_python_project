@@ -15,7 +15,7 @@
  
  # **Librería y Módulos Utilizados** :books: :point_right:
  - **colab** ---> servicio cloud - jupyter notebook
- - **keras - tensorflow**
+ - **keras / tensorflow**
  - **scikit-learn**
  - **matplotlib**
  - **seaborn**
@@ -61,6 +61,15 @@ El dataset "whats-burning" pesa alrededor de 500Mbytes y contiene 3801 imágenes
 Una vez obtenido las imágenes que van a hacer nuestras "entradas" se procede a realizar un pipeline con el fin de obtener nuestras "salidas" (target), que en este caso, son 2 clases con las siguiente etiquetas: "not_fire" "fire".
 
 Finalmente, el fin de este notebook es poder predecir usando IA, si una imagen posee fuego o no.
+
+
+# **Algoritmos Utilizados:**
+
+Se utilzaron los siguiente algoritmos para obtener los 4 modelos usados y/o desarrollados a lo largo del notebook.
+
+- Redes Neuronales (con y sin Dropout)
+- Redes Convolucionales -> CNN --> (CONV + POOLING) + Dropout
+- Transfer Learning --> VGG16
 
 
 # **Pipeline Utilizado:**
