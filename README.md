@@ -1,75 +1,81 @@
-![logotipo](static/media/diabetes.jpg)
-# **SIRCODI** :drop_of_blood: :medical_symbol: :argentina:
- ## *Sistema de Registro y Control para Personas con Diabetes.* 
- Este es un Proyecto del tipo Web-App o API Realizado para el Curso de "Programador Python".
+![logotipo](./whats_burning.jpg)
+# **What´s Burning?** 🔥 🇦🇷
+ ## *IA - Procesamiento de Imágenes - Redes Convolucionales CNN.* 
+ Este es un Proyecto utilizando IA, más precisamente la aplicación de Redes CNN (Convolutional Neuronal Network) al procesamiento de imágenes".
  
  
 # **Proyecto** :technologist:
- - **Número** --> 2do Proyecto
- - **Tipo** --> Aplicación Web - WebApp - REST API
- - **Lenguaje Backend Utilizado** --> Python
- - **Curso** --> Programador Python 
+ - **Número** --> 3er Proyecto
+ - **Tipo** --> Notebook/Colab - IA - Redes CNN - Procesamiento de Imágenes.
+ - **Lenguaje Utilizado** --> Python
+ - **Curso** --> Python Analytics 
  - **Carrera** --> Desarrollador Python
  - **Institución Educativa** --> Inove Coding School
  
  
  # **Librería y Módulos Utilizados** :books: :point_right:
- - **Flask** ---> microframework
- - **sqlite3** ---> DB - Data Base
+ - **colab** ---> servicio cloud - jupyter notebook
+ - **keras - tensorflow**
+ - **scikit-learn**
  - **matplotlib**
  - **seaborn**
  - **numpy**
- - **traceback**
- - **io**
- - **logging**
+ - **pandas**
  - **os**
- - **datetime**
- - **configparser**
+ - **platform**
+ - **glob**
+ - **gdown**
  
  
- # **Pre-requisitos** 📋
-Para poder ejecutar esta aplicación, será necesario tener instalada la versión 3.6 de Python o superior. También es necesario incluir varios módulos.
+ # **Fuente de los datos**
+Dataset extraído de la página de "Kaggle: Your Machine Learning and Data Science Community" 
+ 
+<a href="https://www.kaggle.com/escofresco/whats-burning"><h4>Dataset source</h4></a>
+ 
+ 
+ # **Requerimientos** 📋
+Para poder ejecutar esta aplicación, será necesario tener instalada la versión 3.6 de Python o superior. También es necesario incluir los módulos especificados arriba.
+Es recomendable usar el servicio cloud Google Colaboratory (Colab), modificando el entorno de ejecución, en GPU, para acelerar el procesamiento y ejecución del notebook.
 Recomendamos antes de descargar el repositorio, realizar los siguientes pasos:
 
 ```
-pip3 install pip -U --upgrade
-pip3 install numpy
+pip3 install pip -U --upgrade    # Actualizar pip
+pip3 install -U numpy 
 pip3  install matplotlib
 pip3 install -U seaborn
-pip3 install -U Flask
+pip3 install seaborn
+pip3 install pandas
+pip3 install scipy
+pip3 install -U scikit-learn
+pip3 install -U jupyterlab
+--------- Opcional ----------
+pip3 install opencv-python
+pip3 install tensorflow==2.3.1
+pip3 install keras
 ```
  
  
- # **Para que el programa funcione correctamente:** :point_right:
- #### *Se debe Bajar los siguientes módulos del repositorio:*
- 1. ```app.py``` (Programa Principal)
- 2. ```diabetes.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el manejo de la DB)
- 3. ```analitycs.py``` (Módulo/Librería que Contiene varias funciones utilizadas para el filtrado y ploteado de la información)
- 4. ```config.py``` (Módulo/Librería que Contiene la función para la manipulación del archivo config.ini)
- 5. ```config.ini``` (Archivo de Configuración imprescindible para que funcione el programa.)
- 6. ```schema.sql``` (Archivo que permite crear las tablas de la DB)
- 7. Carpeta ```templates``` (Contiene todos los archivos .html)
- 8. Carpeta ```static``` (Contiene las carpetas: ```media``` donde están alojadas las imágenes ```style``` donde están alojados los archivos .css
- 
- 
  # **Descripción** :page_facing_up:
- Como bien lo aclara el título principal, es un sistema registro y control para aquellas personas con Diabetes.
- El Registro se realiza a través de un formulario donde se le pedirá al usuario/paciente ingresar los siguientes datos: Nombre Completo, 
- Edad, DNI, Sexo Biológico y finalmente el Nivel de Azúcar en Sangre estando en Ayuna.
- Una vez realizado esto y enviado la información, el paciente y/o el médico en cuestión, podrían realizar un monitoreo de los registros mediante
- gráficos y tablas.
- Además permite mostrar un gráfico comparativo de las personas registradas según grupo etario y sexo biológico.
- 
+El dataset "whats-burning" pesa alrededor de 500Mbytes y contiene 3801 imágenes a color, por un lado distintas imágenes con fuego y por otro lado imágenes donde no hay fuego o simplemente humo. Cada pixel de cada imagen, al ser de color, posee 3 canales de profundidad (R, G, B).
+
+Una vez obtenido las imágenes que van a hacer nuestras "entradas" se procede a realizar un pipeline con el fin de obtener nuestras "salidas" (target), que en este caso, son 2 clases con las siguiente etiquetas: "not_fire" "fire".
+
+Finalmente, el fin de este notebook es poder predecir usando IA, si una imagen posee fuego o no.
+
+
+# **Pipeline Utilizado:**
+
+- Recolectar Datos
+- Procesar Datos
+- Explorar Datos
+- Entrenar Modelo
+- Validar Modelo
+- Utilzar Modelo
+- Conclusiones
+
  
  # **Modos de Uso** 🔧⚙️
-Descargue el repositorio en su pc y abra el proyecto en su editor de código, luego ejecute el archivo ```app.py```. La aplicación crea un servidor local en la dirección http://127.0.0.1:5000/ en donde tendremos alojado el frontend de nuestra aplicación. Las direcciones para acceder a las páginas de la aplicación son:
-
-- http://127.0.0.1:5000/          # Página principal que lo guiará para el uso de la WebApp.
-- http://127.0.0.1:5000/formulario # Página en donde podremos ingresar los datos para ser enviados y luego cargados en la DB.
-- http://127.0.0.1:5000/niveles/tabla   # Página que muestra todos los registros realizados en formato tabla HTML.
-- http://127.0.0.1:5000/niveles/api   # Página que muestra el dataset en formato JSON de los registros realizados --> Útil para Desarrolladores
-- http://127.0.0.1:5000/comparativa   # Página que muestra los gráficos de comparaciones de la cantidad de personas según grupo etario y sexo biológico.
-- http://127.0.0.1:5000/info   # Página que muestra información y descripción del funcionamiento de la página.
+Descargue el repositorio en su pc y utilice jupyter lab, para accede al jupyter notebook, o bien, utilice el servicio cloud Google Colaboratory "Colab" (este último siendo recomendado por los recursos utilizados durante la ejecución del programa).
  
  
 # **Autor** ✒️
@@ -83,7 +89,7 @@ Descargue el repositorio en su pc y abra el proyecto en su editor de código, lu
 
 # **Versión y Última Actualización** :heavy_check_mark:
  - **Versión:** 1.1
- - **Última Actualización:** 23-12-2020
+ - **Última Actualización:** 05-06-2021
 
 
 # **Licencia** 📄 :balance_scale:
@@ -95,4 +101,6 @@ Este proyecto tiene un propósito meramente académico y con fines de práctica.
   
   Muchas Gracias por tomarte el tiempo de ver el repositorio y haber llegado hasta acá.
   
-  Emmanuel.
+  Saludos cordiales.
+  
+  Emmanuel Torres Molina.
